@@ -14,7 +14,7 @@ const sections = [
 const contributors = [
   { name: 'Bhandekar Abhinay', role: 'Student' },
   { name: 'Thakur Jaideep Singh', role: 'Student' },
-  { name: 'Debanjan Das', role: 'Senior Advisor' },
+  { name: 'Dr.Debanjan Das', role: 'Senior Advisor' },
 ];
 
 function App() {
