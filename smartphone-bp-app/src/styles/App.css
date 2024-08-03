@@ -1,0 +1,34 @@
+.app {
+    display: flex;
+    min-height: 100vh;
+  }
+  
+  .content {
+    flex: 1;
+    margin-left: var(--sidebar-width);
+    padding: 2rem;
+    max-width: calc(100% - var(--sidebar-width));
+    transition: margin-left var(--transition-speed) ease;
+    background-color: var(--content-background);
+  }
+  
+  .sidebar-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    letter-spacing: 0.5px;
+  }
+  
+  .contributors {
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+    color: var(--text-color);
+  }
+  
+  @media (max-width: 768px) {
+    .content {
+      margin-left: 0;
+      max-width: 100%;
+    }
+  }

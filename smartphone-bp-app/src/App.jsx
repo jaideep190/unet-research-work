@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Sidebar from './components/Sidebar';
 import ContentSection from './components/ContentSection';
+import './styles/App.css';
 
 const sections = [
   { id: 'paper', title: 'Paper' },
@@ -11,12 +12,6 @@ const sections = [
   { id: 'error-analysis', title: 'Error Analysis' },
 ];
 
-const contributors = [
-  { name: 'Bhandekar Abhinay', role: 'Student' },
-  { name: 'Thakur Jaideep Singh', role: 'Student' },
-  { name: 'Dr.Debanjan Das', role: 'Senior Advisor' },
-];
-
 function App() {
   const [activeSection, setActiveSection] = useState(sections[0].id);
 
@@ -24,15 +19,11 @@ function App() {
     <div className="app">
       <Sidebar sections={sections} activeSection={activeSection} setActiveSection={setActiveSection} />
       <div className="content">
-        <h1 className="sidebar-title">SmartBP: Smartphone-Based Blood Pressure Measurement System</h1>
-        <div className="contributors">
-          {contributors.map((contributor, index) => (
-            <span key={index}>
-              {contributor.name} ({contributor.role})
-              {index < contributors.length - 1 ? ' • ' : ''}
-            </span>
-          ))}
+        <h1 className="sidebar-title" style={{ textAlign: 'center' }}>SmartBP: Smartphone-Based Blood Pressure Measurement System</h1>
+        <div className="contributors-box">
+          <h2 className="contributors-title" style={{ textAlign: 'center', fontSize: '1rem' }}>Abhinay Bhandekar (bhandekar22102@iiitnr.edu.in) • Thakur Jaideep Singh (thakur22102@gmail.com) • Dr. Debanjan Das</h2>
         </div>
+        <br></br>
         {sections.map((section) => (
           <ContentSection
             key={section.id}

@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/ContentSection.css';
 
 function ContentSection({ id, title, active }) {
   return (
@@ -23,7 +24,9 @@ function ContentSection({ id, title, active }) {
                 Access the full research paper (PDF)
               </a>
             </p>
-            <img src="/images/paper.png" alt="Paper preview" className="section-image" style={{ maxWidth: '50%', height: 'auto' }} />
+            <div style={{ display: 'flex', justifyContent: 'center' }}>
+              <img src="/images/paper.png" alt="Paper preview" className="section-image" style={{ maxWidth: '50%', height: 'auto' }} />
+            </div>
           </>
         )}
         {id === 'app' && (
@@ -46,7 +49,9 @@ function ContentSection({ id, title, active }) {
                 Access the SmartBP application
               </a>
             </p>
-            <img src="/images/app.png" alt="App screenshot" className="section-image" />
+            <div style={{ display: 'flex', justifyContent: 'center' }}>
+              <img src="/images/app.png" alt="App screenshot" className="section-image" />
+            </div>
           </>
         )}
         {id === 'data-visualization' && (
@@ -86,7 +91,9 @@ function ContentSection({ id, title, active }) {
               <li>Global Average Pooling 1D layers for final SBP and DBP predictions</li>
             </ul>
             <p>The model was implemented using TensorFlow 2.0.0 and Keras, with a total size of approximately 40 MB, later optimized to 14 MB using TensorFlow Lite for efficient smartphone deployment.</p>
-            <img src="/images/model_architecture.png" alt="MAGU Model Architecture" className="section-image" style={{ width: '70%' }}/>
+            <div style={{ display: 'flex', justifyContent: 'center' }}>
+              <img src="/images/model_architecture.png" alt="MAGU Model Architecture" className="section-image" style={{ width: '70%' }}/>
+            </div>
           </>
         )}
         {id === 'fourier-fit' && (
