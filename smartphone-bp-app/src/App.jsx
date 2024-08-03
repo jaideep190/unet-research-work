@@ -48,7 +48,7 @@ function App() {
         <div className="content-header">
           <h1 className="main-title">SmartBP: Smartphone-Based Blood Pressure Measurement System</h1>
           <div className="contributors-box">
-            <h2 className="contributors-title">Abhinay Bhandekar (bhandekar22102@iiitnr.edu.in) • Thakur Jaideep Singh (thakur22102@gmail.com) • Dr. Debanjan Das</h2>
+            <h2 className="contributors-title">Abhinay Bhandekar (bhandekar22102@iiitnr.edu.in) • Thakur Jaideep Singh (thakur22102@iiitnr.edu.in) • Dr.Debanjan Das, Senior IEEE Member</h2>
           </div>
         </div>
         {sections.map((section) => (
