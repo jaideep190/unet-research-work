@@ -4,11 +4,11 @@ import '../styles/ContentSection.css';
 function ContentSection({ id, title, active }) {
   return (
     <section id={id} className={`content-section ${active ? 'active' : ''}`}>
-      <h2 style={{ fontFamily: 'Georgia, serif' }}>{title}</h2>
-      <div className="section-content" style={{ fontFamily: 'Arial, sans-serif' }}>
+      <h2>{title}</h2>
+      <div className="section-content">
         {id === 'paper' && (
           <>
-            <h3 style={{ fontFamily: 'Georgia, serif' }}>SmartBP: Smartphone Based Blood Pressure Measurement System Using Mixed Attention Gated U-Net</h3>
+            <h3>SmartBP: Smartphone Based Blood Pressure Measurement System Using Mixed Attention Gated U-Net</h3>
             <p>This paper presents a novel approach to blood pressure measurement utilizing smartphone technology and advanced deep learning techniques. Our methodology leverages photoplethysmography (PPG) signals captured via smartphone cameras, combined with state-of-the-art neural network architectures for precise blood pressure estimation.</p>
             <p>Key contributions of this research include:</p>
             <ul>
@@ -24,14 +24,14 @@ function ContentSection({ id, title, active }) {
                 Access the full research paper (PDF)
               </a>
             </p>
-            <div style={{ display: 'flex', justifyContent: 'center' }}>
-              <img src="/images/paper.png" alt="Paper preview" className="section-image" style={{ maxWidth: '50%', height: 'auto' }} />
+            <div className="image-container">
+              <img src="/images/paper.png" alt="Paper preview" className="section-image" style={{ maxWidth: '100%', height: 'auto' }} />
             </div>
           </>
         )}
         {id === 'app' && (
           <>
-            <h3 style={{ fontFamily: 'Georgia, serif' }}>SmartBP Application</h3>
+            <h3>SmartBP Application</h3>
             <p>SmartBP is an autonomous, non-invasive smartphone application for blood pressure measurement. It utilizes the smartphone's camera and flash to capture PPG signals from the user's fingertip, employing advanced signal processing techniques for accurate blood pressure estimation.</p>
             <p>Key features:</p>
             <ul>
@@ -49,14 +49,14 @@ function ContentSection({ id, title, active }) {
                 Access the SmartBP application
               </a>
             </p>
-            <div style={{ display: 'flex', justifyContent: 'center' }}>
-              <img src="/images/app.png" alt="App screenshot" className="section-image" />
+            <div className="image-container">
+              <img src="/images/app.png" alt="App screenshot" className="section-image" style={{ maxWidth: '100%', height: 'auto' }} />
             </div>
           </>
         )}
         {id === 'data-visualization' && (
           <>
-            <h3 style={{ fontFamily: 'Georgia, serif' }}>Dataset and Data Visualization</h3>
+            <h3>Dataset and Data Visualization</h3>
             <p>Our study utilizes a subset of the MIMIC-III database, spanning from 2001 to 2008, sampled at 125 Hz. This dataset, comprising 862,492 records of PPG and ABP signals, underwent rigorous preprocessing to ensure data quality and validity.</p>
             <p>Key aspects of our data preparation and visualization:</p>
             <ul>
@@ -67,9 +67,9 @@ function ContentSection({ id, title, active }) {
               <li>Region of Interest (ROI) determination to mitigate uneven lighting effects in smartphone captures</li>
             </ul>
             <p>Our study employs sophisticated data visualization techniques to analyze blood pressure data distribution and PPG signals, facilitating deeper insights into cardiovascular health metrics:</p>
-            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-              <img src="/images/data1.png" alt="SBP and DBP Distribution" className="section-image" style={{ width: '48%' }} />
-              <img src="/images/data2.png" alt="PPG Signal Visualization" className="section-image" style={{ width: '48%' }} />
+            <div className="image-container">
+              <img src="/images/data1.png" alt="SBP and DBP Distribution" className="section-image" style={{ maxWidth: '100%', height: 'auto' }} />
+              <img src="/images/data2.png" alt="PPG Signal Visualization" className="section-image" style={{ maxWidth: '100%', height: 'auto' }} />
             </div>
             <p>Left: Statistical distribution of Systolic (SBP) and Diastolic (DBP) Blood Pressure samples, illustrating the range and frequency of measurements in our dataset. This visualization helps in understanding the overall blood pressure profile of the study population.</p>
             <p>Right: Comparative visualization of PPG signals.</p>
@@ -78,7 +78,7 @@ function ContentSection({ id, title, active }) {
         )}
         {id === 'model-architecture' && (
           <>
-            <h3 style={{ fontFamily: 'Georgia, serif' }}>Mixed Attention Gated U-Net Model</h3>
+            <h3>Mixed Attention Gated U-Net Model</h3>
             <p>The core innovation of SmartBP lies in its utilization of a Mixed Attention Gated U-Net (MAGU) model for blood pressure estimation. This advanced architecture enhances feature extraction and prediction accuracy through a combination of convolutional and attention mechanisms.</p>
             <p>Key components:</p>
             <ul>
@@ -91,18 +91,18 @@ function ContentSection({ id, title, active }) {
               <li>Global Average Pooling 1D layers for final SBP and DBP predictions</li>
             </ul>
             <p>The model was implemented using TensorFlow 2.0.0 and Keras, with a total size of approximately 40 MB, later optimized to 14 MB using TensorFlow Lite for efficient smartphone deployment.</p>
-            <div style={{ display: 'flex', justifyContent: 'center' }}>
-              <img src="/images/model_architecture.png" alt="MAGU Model Architecture" className="section-image" style={{ width: '70%' }}/>
+            <div className="image-container">
+              <img src="/images/model_architecture.png" alt="MAGU Model Architecture" className="section-image" style={{ maxWidth: '100%', height: 'auto' }} />
             </div>
           </>
         )}
         {id === 'fourier-fit' && (
           <>
-            <h3 style={{ fontFamily: 'Georgia, serif' }}>Fourier Fit Analysis</h3>
+            <h3>Fourier Fit Analysis</h3>
             <p>To further validate our model's performance and understand the underlying patterns in blood pressure predictions, we conducted a Fourier fit analysis on the predicted SBP and DBP values.</p>
-            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-              <img src="/images/fourierfitsbp.png" alt="SBP Fourier Fit" className="section-image" style={{ width: '48%' }} />
-              <img src="/images/fourierfitdbp.png" alt="DBP Fourier Fit" className="section-image" style={{ width: '48%' }} />
+            <div className="image-container">
+              <img src="/images/fourierfitsbp.png" alt="SBP Fourier Fit" className="section-image" style={{ maxWidth: '100%', height: 'auto' }} />
+              <img src="/images/fourierfitdbp.png" alt="DBP Fourier Fit" className="section-image" style={{ maxWidth: '100%', height: 'auto' }} />
             </div>
             <p>Left: Fourier fit analysis of Systolic Blood Pressure (SBP) predictions.</p>
             <p>Right: Fourier fit analysis of Diastolic Blood Pressure (DBP) predictions.</p>
@@ -111,23 +111,12 @@ function ContentSection({ id, title, active }) {
         )}
         {id === 'error-analysis' && (
           <>
-            <h3 style={{ fontFamily: 'Georgia, serif' }}>Performance and Error Analysis</h3>
+            <h3>Performance and Error Analysis</h3>
             <p>SmartBP demonstrates high accuracy in blood pressure prediction, meeting British Hypertension Society (BHS) Grade B criteria, a widely recognized standard in blood pressure measurement accuracy:</p>
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-              <div style={{ marginBottom: '20px', width: '100%' }}>
-                <h4 style={{ fontFamily: 'Georgia, serif' }}>Model Performance and Error Metrics</h4>
-                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                  <img src="/images/error_metric.png" alt="Model Performance" className="section-image" style={{ width: '48%', objectFit: 'contain' }} />
-                  <img src="/images/bhs_criteria.png" alt="BHS Criteria Results" className="section-image" style={{ width: '48%', objectFit: 'contain' }} />
-                </div>
-              </div>
-              <div style={{ marginBottom: '20px', width: '100%' }}>
-                <h4 style={{ fontFamily: 'Georgia, serif' }}>Error Distribution and Bland-Altman Plot</h4>
-                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                  <img src="/images/error_plot1.png" alt="Error Distribution" className="section-image" style={{ width: '48%', objectFit: 'contain' }} />
-                  <img src="/images/blandaltman_plot.png" alt="Bland-Altman Plot" className="section-image" style={{ width: '48%', objectFit: 'contain' }} />
-                </div>
-              </div>
+            <div className="image-container">
+              <img src="/images/error_metric.png" alt="Model Performance" className="section-image" style={{ maxWidth: '100%', height: 'auto' }} />
+              <img src="/images/bhs_criteria.png" alt="BHS Criteria Results" className="section-image" style={{ maxWidth: '100%', height: 'auto' }} />
+              <img src="/images/error_comparisons.png" alt="Error Comparison" className="section-image" style={{ maxWidth: '100%', height: 'auto' }} /> 
             </div>
             <p>Key results:</p>
             <ul>
@@ -138,6 +127,12 @@ function ContentSection({ id, title, active }) {
               <li>Real-time testing conducted on 13 individuals using both iPhone 12 and Realme 5i smartphones</li>
               <li>Comparison with automatic wrist blood pressure monitor showed high correlation</li>
             </ul>
+            <div className="image-container">
+              <img src="/images/error_plot1.png" alt="Error Distribution" className="section-image" style={{ maxWidth: '100%', height: 'auto' }} />
+              <img src="/images/blandaltman_plot.png" alt="Bland-Altman Plot" className="section-image" style={{ maxWidth: '100%', height: 'auto' }} />
+            </div>
+            <p>Left: Error distribution histogram showing the frequency of prediction errors for SBP and DBP.</p>
+            <p>Right: Bland-Altman plot demonstrating the agreement between predicted and true blood pressure values.</p>
             <p>The Bland-Altman plot demonstrates good agreement between predicted and true blood pressure values, with most points falling within the 95% confidence interval. The error distribution histogram shows that a significant number of predictions have minimal absolute error, indicating high accuracy in blood pressure estimation.</p>
           </>
         )}

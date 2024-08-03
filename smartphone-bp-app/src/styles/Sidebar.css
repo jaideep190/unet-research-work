@@ -1,49 +1,75 @@
 .sidebar {
-    width: var(--sidebar-width);
-    background-color: var(--sidebar-background);
-    border-right: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 2rem;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    overflow-y: auto;
-    transition: transform var(--transition-speed) ease;
-    z-index: 1000;
+  width: var(--sidebar-width);
+  background-color: var(--sidebar-background);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  overflow-y: auto;
+  transition: transform var(--transition-speed) ease;
+  z-index: 1000;
+}
+
+.sidebar-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+  letter-spacing: 0.5px;
+}
+
+.sidebar-menu {
+  list-style-type: none;
+}
+
+.sidebar-item {
+  margin-bottom: 1rem;
+}
+
+.sidebar-item a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color var(--transition-speed) ease, transform var(--transition-speed) ease;
+  display: block;
+  padding: 0.5rem 0;
+}
+
+.sidebar-item a:hover,
+.sidebar-item.active a {
+  color: var(--primary-color);
+  transform: translateX(5px);
+}
+
+.sidebar-toggle {
+  display: none;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1001;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+    width: 100%;
+    padding: 1rem;
   }
-  
-  .sidebar-menu {
-    list-style-type: none;
+
+  .sidebar.open {
+    transform: translateX(0);
   }
-  
-  .sidebar-item {
-    margin-bottom: 1rem;
-  }
-  
-  .sidebar-item a {
-    color: var(--text-color);
-    text-decoration: none;
-    font-size: 1.1rem;
-    transition: color var(--transition-speed) ease, transform var(--transition-speed) ease;
+
+  .sidebar-toggle {
     display: block;
-    padding: 0.5rem 0;
   }
-  
-  .sidebar-item a:hover,
-  .sidebar-item.active a {
-    color: var(--primary-color);
-    transform: translateX(5px);
-  }
-  
-  @media (max-width: 768px) {
-    .sidebar {
-      width: 100%;
-      position: fixed;
-      padding: 1rem;
-      transform: translateX(-100%);
-    }
-  
-    .sidebar.active {
-      transform: translateX(0);
-    }
-  }
+}
